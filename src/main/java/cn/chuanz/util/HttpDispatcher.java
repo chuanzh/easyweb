@@ -3,12 +3,12 @@ package cn.chuanz.util;
 import cn.chuanz.filter.HttpFilter;
 import cn.chuanz.webframe.FreemarkerBuilder;
 
-public class MyHttpFilter extends HttpFilter {
+public class HttpDispatcher extends HttpFilter {
 
 	@Override
 	public int getRunTimeLimit() {
 		// TODO Auto-generated method stub
-		return 10000;
+		return ConfigRead.readIntValue("run_time_limit");
 	}
 
 	@Override
@@ -20,7 +20,7 @@ public class MyHttpFilter extends HttpFilter {
 	@Override
 	public String controlFolder() {
 		// TODO Auto-generated method stub
-		return "cn.chuanz.control";
+		return ConfigRead.readValue("control_path");
 	}
 
 	@Override
@@ -31,7 +31,7 @@ public class MyHttpFilter extends HttpFilter {
 
 	@Override
 	protected void initHtmlBuilder() {
-		FreemarkerBuilder.init("cn.chuanz.view", false, new String[]{"macro.ftl"});
+		FreemarkerBuilder.init(ConfigRead.readValue("view_path"), false, new String[]{"macro.ftl"});
 	}
 
 }

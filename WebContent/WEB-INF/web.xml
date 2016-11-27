@@ -6,7 +6,7 @@
   
   <filter>
     <filter-name>myfilter</filter-name>
-    <filter-class>cn.chuanz.util.MyHttpFilter</filter-class>
+    <filter-class>cn.chuanz.util.HttpDispatcher</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>myfilter</filter-name>
