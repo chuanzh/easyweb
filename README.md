@@ -1,5 +1,5 @@
 # easyweb
-轻量级web框架，集成easyorm,freemarker
+轻量级web框架，集成easyorm,freemarker，前端使用ace框架，自动适应手机，平板，电脑，笔记本等各种设备
 使用HttpDispatcher作为http任务调度。
 
 #配置说明
@@ -38,3 +38,11 @@ public String func() {
 </body>
 </html>
 ```
+
+# easyweb截图
+![image](https://github.com/chuanzhang007/easyweb/blob/master/WebContent/images/login.png?raw=true)
+
+![image](https://github.com/chuanzhang007/easyweb/blob/master/WebContent/images/upUserGroup1.png?raw=true)
+![image](https://github.com/chuanzhang007/easyweb/blob/master/WebContent/images/upUserGroup2.png?raw=true)
+
+![image](https://github.com/chuanzhang007/easyweb/blob/master/WebContent/images/upMenu.png?raw=true)
