@@ -31,7 +31,7 @@ public class HttpDispatcher extends HttpFilter {
 
 	@Override
 	protected void initHtmlBuilder() {
-		FreemarkerBuilder.init(ConfigRead.readValue("view_path"), false, new String[]{"macro.ftl"});
+		FreemarkerBuilder.init(ConfigRead.readValue("view_path"), false, new String[]{"common/macro.ftl"});
 	}
 
 }

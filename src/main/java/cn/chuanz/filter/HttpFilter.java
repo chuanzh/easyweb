@@ -51,6 +51,9 @@ public abstract class HttpFilter implements Filter {
 						.substring(p.indexOf(".control.") + 8, p.length());
 				actionList.put(key.toLowerCase().replace('.', '/'), c);
 			}
+			if(this.getRunTimeLimit() != 0){
+				runTimeLimit = this.getRunTimeLimit();
+			}
 			initHtmlBuilder();
 		} catch (Exception e) {
 			logger.error(FuncStatic.errorTrace(e));
@@ -142,7 +145,7 @@ public abstract class HttpFilter implements Filter {
 	 */
 	public void beforeDoControl(Object controlObject, HttpServletRequest request,HttpServletResponse response)  throws Exception {
 		//初始化对象注入
-		Field[] fileds = controlObject.getClass().getFields();
+		Field[] fileds = controlObject.getClass().getDeclaredFields();
 		for (Field f : fileds) {
 			f.setAccessible(true);
 			String fileName = f.getName();

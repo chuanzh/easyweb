@@ -655,7 +655,7 @@ public class FuncStatic {
 		StringWriter sw = new StringWriter();
 		PrintWriter pw = new PrintWriter(sw);
 		e.printStackTrace(pw);  
-		return e.toString();
+		return sw.toString();
  	}
 	
 	public static void killWindowsTask(String taskName){
@@ -782,5 +782,12 @@ public class FuncStatic {
 			jo.put(args[i], args[i + 1]);
 		}
 		return jo;
+	}
+	
+	public static String toStr (Object o) {
+		if (o != null) {
+			return o.toString();
+		}
+		return "";
 	}
 }
